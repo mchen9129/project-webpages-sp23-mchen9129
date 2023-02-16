@@ -25,7 +25,7 @@
 
 <h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2023</h1>
 <h1 align="middle">Project 1: Rasterizer</h1>
-<h2 align="middle">Jojo Chen + Michelle Chen, CS184</h2>
+<h2 align="middle">Jojo Chen + Michelle Chen, CS184-chens</h2>
 
 <br><br>
 
@@ -45,22 +45,22 @@
   <table style="width=100%">
     <tr>
       <td>
-        <img src="./img/test3.png" align="middle" width="400px"/>
+        <img src="img/test3.png" align="middle" width="400px"/>
         <figcaption align="middle">Test3 Results</figcaption>
       </td>
       <td>
-        <img src="./img/test4.png" align="middle" width="400px"/>
+        <img src="img/test4.png" align="middle" width="400px"/>
         <figcaption align="middle">Test4 Results</figcaption>
       </td>
     </tr>
     <br>
     <tr>
       <td>
-        <img src="./img/test5.png" align="middle" width="400px"/>
+        <img src="img/test5.png" align="middle" width="400px"/>
         <figcaption align="middle">Test5 Results</figcaption>
       </td>
       <td>
-        <img src="./img/test6.png" align="middle" width="400px"/>
+        <img src="img/test6.png" align="middle" width="400px"/>
         <figcaption align="middle">Test6 Results</figcaption>
       </td>
     </tr>
@@ -86,18 +86,18 @@
   <table style="width=100%">
     <tr>
       <td>
-        <img src="./img/test4-1.png" align="middle" width="400px"/>
+        <img src="img/test4-1.png" align="middle" width="400px"/>
         <figcaption align="middle">Test4: sample rate = 1</figcaption>
       </td>
       <td>
-        <img src="./img/test4-4.png" align="middle" width="400px"/>
+        <img src="img/test4-4.png" align="middle" width="400px"/>
         <figcaption align="middle">Test4: sample rate = 4</figcaption>
       </td>
     </tr>
     <br>
     <tr>
       <td>
-        <img src="./img/test4-16.png" align="middle" width="400px"/>
+        <img src="img/test4-16.png" align="middle" width="400px"/>
         <figcaption align="middle">Test4: sample rate = 16</figcaption>
       </td>
     </tr>
@@ -117,7 +117,7 @@
 <h3 align="middle">Part 3: Transforms</h3>
 <b>Description and Results</b>
 <p>In task 3, we implemented 3 transforms that are used to render robot.svg correctly. We also made a separate file, my_robot.svg, and changed the transformations of each body part to create an image of a robot waving with its left hand. In order to do this, we bend the second half of his left arm up in a 90 degree angle to simulate the waving hand. We then moved his right arm down by his side by first rotating both parts of the arm, then translating them down and closer to his body. We also changed the man’s head, torso, and limbs to different colors. </p>
-<img src="./img/my_robot.png" align="middle" width="800px"/>
+<img src="img/my_robot.png" align="middle" width="800px"/>
 <br><br>
 <b>Approach and Implementation</b>
 <p>To implement the transforms, we thought about what the transformation matrices would be for a 2D plane, then implemented these matrices as Matrix3x3 objects. These matrices are returned by each of the translate(), scale(), and rotate() functions. </p>
@@ -131,11 +131,11 @@
 <b>Description and Results</b>
 <p>Barycentric coordinates are a coordinate system where points can be specified by the locations of 3 coordinates forming a triangle. This allows us to interpolate values so that we can create smoothly varying values across the three coordinates. For example, the image below shows 3 vertices which are red, green and blue. The coordinates of each point are used to calculate alpha, beta, and gamma values, which are used as weights to average the colors of the 3 vertices at each point within the triangle, creating a smooth gradient across.</p>
 
-<img src="./img/triangle.png" align="middle" width="400px"/>
+<img src="img/triangle.png" align="middle" width="400px"/>
 <br>
 
 <p>In this task, we were able to successfully output the gradient color wheel in test 7.</p>
-<img src="./img/test7.png" align="middle" width="800px"/>
+<img src="img/test7.png" align="middle" width="800px"/>
 <br><br>
 <b>Approach and Implementation</b>
 <p>We implemented the barycentric interpolation by making a slight adjustment to the task 2 supersampling code. Instead of recording the given color in the sample_buffer, we calculate alpha, beta, and gamma with the given coordinates and use these to calculate the weighted average of the 3 colors. This value is then recorded in the buffer as the color of that point. </p>
@@ -154,22 +154,22 @@
   <table style="width=100%">
     <tr>
       <td>
-        <img src="./img/nearest-1.png" align="middle" width="400px"/>
+        <img src="img/nearest-1.png" align="middle" width="400px"/>
         <figcaption align="middle">Nearest sampling at 1 sample per pixel</figcaption>
       </td>
       <td>
-        <img src="./img/nearest-16.png" align="middle" width="400px"/>
+        <img src="img/nearest-16.png" align="middle" width="400px"/>
         <figcaption align="middle">Nearest sampling at 16 samples per pixel</figcaption>
       </td>
     </tr>
     <br>
     <tr>
       <td>
-        <img src="./img/bilinear-1.png" align="middle" width="400px"/>
+        <img src="img/bilinear-1.png" align="middle" width="400px"/>
         <figcaption align="middle">Bilinear sampling at 1 sample per pixel</figcaption>
       </td>
       <td>
-        <img src="./img/bilinear-16.png" align="middle" width="400px"/>
+        <img src="img/bilinear-16.png" align="middle" width="400px"/>
         <figcaption align="middle">Bilinear sampling at 16 sample per pixel</figcaption>
       </td>
     </tr>
@@ -203,22 +203,22 @@
   <table style="width=100%">
     <tr>
       <td>
-        <img src="./img/lzero_nearest.png" align="middle" width="400px"/>
+        <img src="img/lzero_nearest.png" align="middle" width="400px"/>
         <figcaption align="middle">L_ZERO and P_NEAREST at 1 sample per pixel</figcaption>
       </td>
       <td>
-        <img src="./img/lzero_linear.png" align="middle" width="400px"/>
+        <img src="img/lzero_linear.png" align="middle" width="400px"/>
         <figcaption align="middle">L_ZERO and P_LINEAR at 1 sample per pixel</figcaption>
       </td>
     </tr>
     <br>
     <tr>
       <td>
-        <img src="./img/lnearest_nearest.png" align="middle" width="400px"/>
+        <img src="img/lnearest_nearest.png" align="middle" width="400px"/>
         <figcaption align="middle">L_NEAREST and P_NEAREST at 1 sample per pixel</figcaption>
       </td>
       <td>
-        <img src="./img/lnearest_linear.png" align="middle" width="400px"/>
+        <img src="img/lnearest_linear.png" align="middle" width="400px"/>
         <figcaption align="middle">L_NEAREST and P_LINEAR at 1 sample per pixel</figcaption>
       </td>
     </tr>
