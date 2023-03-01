@@ -32,7 +32,7 @@
 <div>
 
 <h2 align="middle">Overview</h2>
-<p>In this project, we implemented an image rasterizer where we used various sampling techniques to work with image files consisting of color or textural data so that we can actually view them. Throughout the project, we worked with basic shapes (triangles, dragons, etc.), manipulated them through transformations and rotations, and then moved on to more complex images with various levels of color, detail, and warping. In order to accomplish this, we used techniques such as pixel sampling, supersampling, transformation matrices, barycentric coordinates, texture mip mapping and level sampling.</p>
+<p>Give a high-level overview of what you implemented in this project. Think about what you've built as a whole. Share your thoughts on what interesting things you've learned from completing the project.</p>
 
 <h2 align="middle">Section I: Rasterization</h2>
 
@@ -230,7 +230,9 @@
 <p>We initially ran into an issue where we got an error when trying to switch levels. We found out that this error was actually due to us forgetting to restrict the bounds of the levels we returned (clamping to avoid negative levels or levels greater than mipmap.size() - 1). We also forgot to scale our dy_uv and dx_uv vectors by the width and height of our frame. In our rasterize method, we ran into issues with calculating the barycentric coordinates to generate dy_uv and dx_uv. Since this method was meant to handle supersampling as well, we realized that we had to increment x and y for each respective parameter by increment_size (the step size calculated according to the size of our supersample) instead of by 1.</p>
 
 <h2 align="middle">Section III: Art Competition</h2>
-<p>We didn't do this xD</p>
+<p>If you are not participating in the optional art competition, don't worry about this section!</p>
+
+<h3 align="middle">Part 7: Draw something interesting!</h3>
 
 <b>Github website link:</b>
 <p>https://mchen9129.github.io/project-webpages-sp23-mchen9129/proj1/index.html</p>
