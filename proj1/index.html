@@ -32,7 +32,7 @@
 <div>
 
 <h2 align="middle">Overview</h2>
-<p>Give a high-level overview of what you implemented in this project. Think about what you've built as a whole. Share your thoughts on what interesting things you've learned from completing the project.</p>
+<p>In this project, we implemented an image rasterizer where we used various sampling techniques to work with image files consisting of color or textural data so that we can actually view them. Throughout the project, we worked with basic shapes (triangles, dragons, etc.), manipulated them through transformations and rotations, and then moved on to more complex images with various levels of color, detail, and warping. In order to accomplish this, we used techniques such as pixel sampling, supersampling, transformation matrices, barycentric coordinates, texture mip mapping and level sampling.</p>
 
 <h2 align="middle">Section I: Rasterization</h2>
 
@@ -195,30 +195,30 @@
 
 <b>Description and Results</b>
 <p>Level sampling is a way to handle scaling down texture data when there are too many texels in one pixel, something that usually happens when the objects in the image are at a greater distance. Each level of the mipmap stores a different filter of the original image with decreasing levels of detail. In task 6, we implemented mipmap level sampling through three different methods: zero-level sampling, nearest level sampling, and bilinear level sampling. Zero-level sampling essentially functioned the same as our original solution for task 5, handling level sampling for the zeroeth MipLevel. Nearest level sampling used the adjacent pixels—(x+1, y) and (x, y+1)---to determine the appropriate MipLevel. Bilinear level sampling sampled along the closest two levels, upper and lower, and computing the weighted sum of each corresponding sample.</p>
-<p>Pixel sampling has the worst antialising power since we finer details in images could lead to inconsistent results depending on which value the sample pulls at each pixel. However, since we are only sampling once per pixel, this method is pretty performance efficient. In terms of memory, we are just storing the image file itself. Supersampling improves upon the antialiasing power of pixel sampling, by sampling multiple times within one pixel to determine the resulting color or texture. This of course has a speed cost since we now need to sample n^2 more frequently where n is the sample rate. The memory cost is comparable to that of pixel sampling, with the additional n*n storage cost for the color of each supersampled value, although depending on implementation, this could potentially be avoided. Level sampling helps increase speed, since we are essentially precomputing lower resolution mip levels and working less frequently with larger amounts of texture data. Since we avoid oversampling smaller objects, it also increases antialising power. However, since we need to store many miplevels along with the original image file, we increase the memory cost.</p>
+<p>Pixel sampling has the worst antialising power since the finer details in images could lead to inconsistent results depending on which value the sample pulls at each pixel. However, since we are only sampling once per pixel, this method is pretty performance efficient. In terms of memory, we are just storing the image file itself. Supersampling improves upon the antialiasing power of pixel sampling, by sampling multiple times within one pixel to determine the resulting color or texture. This of course has a speed cost since we now need to sample n^2 more frequently where n is the sample rate. The memory cost is comparable to that of pixel sampling, with the additional n*n storage cost for the color of each supersampled value, although depending on implementation, this could potentially be avoided. Level sampling helps increase speed, since we are essentially precomputing lower resolution mip levels and working less frequently with larger amounts of texture data. Since we avoid oversampling smaller objects, it also increases antialising power. However, since we need to store many miplevels along with the original image file, we increase the memory cost.</p>
 
-<b>Four combinations of beans</b>
+<b>Here is Back to the Outback and world's most irritating koala</b>
 
 <div align="middle">
   <table style="width=100%">
     <tr>
       <td>
-        <img src="img/lzero_nearest.png" align="middle" width="400px"/>
+        <img src="img/task6_lzero_pnearest.png" align="middle" width="400px"/>
         <figcaption align="middle">L_ZERO and P_NEAREST at 1 sample per pixel</figcaption>
       </td>
       <td>
-        <img src="img/lzero_linear.png" align="middle" width="400px"/>
+        <img src="img/task6_lzero_plinear.png" align="middle" width="400px"/>
         <figcaption align="middle">L_ZERO and P_LINEAR at 1 sample per pixel</figcaption>
       </td>
     </tr>
     <br>
     <tr>
       <td>
-        <img src="img/lnearest_nearest.png" align="middle" width="400px"/>
+        <img src="img/task6_lnearest_pnearest.png" align="middle" width="400px"/>
         <figcaption align="middle">L_NEAREST and P_NEAREST at 1 sample per pixel</figcaption>
       </td>
       <td>
-        <img src="img/lnearest_linear.png" align="middle" width="400px"/>
+        <img src="img/task6_lnearest_plinear.png" align="middle" width="400px"/>
         <figcaption align="middle">L_NEAREST and P_LINEAR at 1 sample per pixel</figcaption>
       </td>
     </tr>
@@ -230,9 +230,7 @@
 <p>We initially ran into an issue where we got an error when trying to switch levels. We found out that this error was actually due to us forgetting to restrict the bounds of the levels we returned (clamping to avoid negative levels or levels greater than mipmap.size() - 1). We also forgot to scale our dy_uv and dx_uv vectors by the width and height of our frame. In our rasterize method, we ran into issues with calculating the barycentric coordinates to generate dy_uv and dx_uv. Since this method was meant to handle supersampling as well, we realized that we had to increment x and y for each respective parameter by increment_size (the step size calculated according to the size of our supersample) instead of by 1.</p>
 
 <h2 align="middle">Section III: Art Competition</h2>
-<p>If you are not participating in the optional art competition, don't worry about this section!</p>
-
-<h3 align="middle">Part 7: Draw something interesting!</h3>
+<p>We didn't do this xD</p>
 
 <b>Github website link:</b>
 <p>https://mchen9129.github.io/project-webpages-sp23-mchen9129/proj1/index.html</p>
