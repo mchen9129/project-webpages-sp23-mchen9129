@@ -44,7 +44,7 @@
 <h2 align="middle">Michelle + Jojo (CS184-chens)</h2>
 
 <!-- Add Website URL -->
-<h2 align="middle">Website URL: <a href="TODO">TODO</a></h2>
+<h2 align="middle">Website URL: <a href="https://mchen9129.github.io/project-webpages-sp23-mchen9129/proj3-1/index.html">https://mchen9129.github.io/project-webpages-sp23-mchen9129/proj3-1/index.html</a></h2>
 
 <br><br>
 
@@ -337,8 +337,8 @@ In the at_least_one_bounce_radiance() function, we implemented the bulk of our i
         <figcaption>CBbunny.dae rendered with global illumination</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>example2.dae</figcaption>
+        <img src="images/spheres-direct-indirect.png" align="middle" width="400px"/>
+        <figcaption>CBspheres_lambertian.dae with global illumination</figcaption>
       </td>
     </tr>
   </table>
@@ -353,19 +353,19 @@ In the at_least_one_bounce_radiance() function, we implemented the bulk of our i
   <table style="width:100%">
     <tr align="center">
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>Only direct illumination (example1.dae)</figcaption>
+        <img src="images/spheres-direct.png" align="middle" width="400px"/>
+        <figcaption>Only direct illumination (CBspheres_lambertian.dae)</figcaption>
       </td>
       <td>
-        <img src="images/your_file.png" align="middle" width="400px"/>
-        <figcaption>Only indirect illumination (example1.dae)</figcaption>
+        <img src="images/spheres-indirect.png" align="middle" width="400px"/>
+        <figcaption>Only indirect illumination (CBspheres_lambertian.dae)</figcaption>
       </td>
     </tr>
   </table>
 </div>
 <br>
 <p>
-    With only the direct lighting, you can see the very bright points where the light source hits both spheres and dark shadows opposite of those. With only indirect lighting we see almost the opposite effect happen, where there aren't any extremely bright points or any extremely dark shadows (cast by the first bounce of the light source hitting the spheres).
+    With only the direct lighting, you can see the very bright points where the light source hits both spheres and dark shadows opposite of those. With only indirect lighting we see almost the opposite effect happen, where there aren't any extremely bright points or any extremely dark shadows (cast by the first bounce of the light source hitting the spheres). The shadows in this version also appear more colorful with hues of red and blue from the walls and because all of the light is coming from the extra bounces, the brightest highlight actually comes from below the spheres where the original light source hits the ground and reflects off of the sphere.
 </p>
 <br>
 
@@ -377,27 +377,27 @@ In the at_least_one_bounce_radiance() function, we implemented the bulk of our i
   <table style="width:100%">
     <tr align="center">
       <td>
-        <img src="images/depth0.png" align="middle" width="400px"/>
+        <img src="images/bunny-max-0.png" align="middle" width="400px"/>
         <figcaption>max_ray_depth = 0 (CBbunny.dae)</figcaption>
       </td>
       <td>
-        <img src="images/depth1.png" align="middle" width="400px"/>
+        <img src="images/bunny-max-1.png" align="middle" width="400px"/>
         <figcaption>max_ray_depth = 1 (CBbunny.dae)</figcaption>
       </td>
     </tr>
     <tr align="center">
       <td>
-        <img src="images/depth2.png" align="middle" width="400px"/>
+        <img src="images/bunny-max-2.png" align="middle" width="400px"/>
         <figcaption>max_ray_depth = 2 (CBbunny.dae)</figcaption>
       </td>
       <td>
-        <img src="images/depth3.png" align="middle" width="400px"/>
+        <img src="images/bunny-max-3.png" align="middle" width="400px"/>
         <figcaption>max_ray_depth = 3 (CBbunny.dae)</figcaption>
       </td>
     </tr>
     <tr align="center">
       <td>
-        <img src="images/depth100.png" align="middle" width="400px"/>
+        <img src="images/bunny-max-100.png" align="middle" width="400px"/>
         <figcaption>max_ray_depth = 100 (CBbunny.dae)</figcaption>
       </td>
     </tr>
@@ -405,7 +405,7 @@ In the at_least_one_bounce_radiance() function, we implemented the bulk of our i
 </div>
 <br>
 <p>
-    YOUR EXPLANATION GOES HERE
+    Increasing the max ray depth seems to increase the total amount of illumination or light in the scene. With 0 bounces, we have basically total darkness and we are not able to see the bunny or the walls at all. With 1 bounce, we're looking at what we had with just direct illumination: the bunny is visible but the highlights and shadows are harsher. Between max_ray_depth 2 and 100, there isn't a massive difference but the contrast between light and shadow on the bunny and in the room are a lot more natural and the shadows appear to have some color to them.
 </p>
 <br>
 
